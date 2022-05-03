@@ -3,15 +3,15 @@ import datetime as dt
 import matplotlib.pyplot as plt
 import numpy as np
 import catboost as cb
-import features
-import advanced_ml
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+import features
+import advanced_ml
 
 #data BTC-USD converted to dollarbar
-df = pd.read_csv("BTCUSD201702-202203_dollarbar.csv").set_index("date")
+df = pd.read_csv("../data/BTCUSD201702-202203_dollarbar.csv").set_index("date")
 df.index = pd.to_datetime(df.index)
 
 
@@ -147,7 +147,7 @@ out = pd.DataFrame(index=test.index)
 out["ret"] = test["close"].shift(-1)/test['close']-1
 out["pred_cb"] = pred_test
 out["ret_cb"] = out["ret"] * out["pred_cb"]
-out["ret_cb"].cumsum().plot(), plt.show()
+out["ret_cb"].cumsum().plot(label='cumulative_return'), plt.legend(), plt.show()
 """
 prob_test = clf.predict_proba(test[features_list_new])
 tmp = pd.DataFrame(prob_test, index=test.index ,columns=[-1, 0, 1])
