@@ -3,7 +3,7 @@
 "This is my first trading Bot!"
 I made a trading bot which predicts the next movement of BTC/USD, and traded with my actual money for about 10 days(20220410-20220421). This is the result!
 
-![actual_reaturn.jpeg](/img/actual_result.jpeg)
+![actual_reaturn.jpeg](/img/actual_result.jpg)
 
 After running my bot, I figured out "execution strategy" was more important than "how we train a model" because my limit orders did not executed sometimes even if my bot predicted correctly. That can be big opportunity loss! After few days I started to trading, I tuned a few parameters, and it got better. I can't show my strategy and some of my feature enginnerings, especially feature-selection, because I'm currently using it as well. But, I uploaded most of my code! 
 
